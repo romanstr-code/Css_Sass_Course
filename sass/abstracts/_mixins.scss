@@ -1,0 +1,7 @@
+@mixin clearfix { // the clearfix to work we always need to specify content
+    &::after {
+        content: "";// Content property specify overwise the sudo element will simply not appear on the page // we want content empty because we don't want to see this element on the page
+        display: table; // Standard version of clearfix
+        clear: both;  // Clears both lef/right float
+    }                   
+}
