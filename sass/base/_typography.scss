@@ -24,7 +24,7 @@ body {
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: ease-out;
-    
+   
         /*
         animation-delay: 3s;
         animation-iteration-count: 3:
@@ -38,5 +38,24 @@ body {
         letter-spacing: 1.75rem;
         
         animation: moveInRight 1s ease-out;
+    }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;// for an element to not occupy all available width
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    // Gradient Effect to appear behind the text
+    -webkit-background-clip: text;// Background gets cliped exactly where the text is // As well it gives it visibility where the text is
+    //Text transparent
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
 }
