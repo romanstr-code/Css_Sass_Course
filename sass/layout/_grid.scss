@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width; // max-width if viewport smaller than 114 rem will fill 100% of available space
-    background-color: #eee;
     margin: 0 auto; // Centre row in the viewport // center block element inside of ontoher block element
 
     // removing bottom margin from last row
@@ -16,7 +15,6 @@
     // $ - dollar sign means, every class that ends with "col-" clas
     // ^ - Selects all elements in which class attributes starts with "col"
     [class^="col-"] {
-        background-color: orangered;
         float: left;// float columns to the left
 
         &:not(:last-child) {
