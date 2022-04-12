@@ -1,0 +1,43 @@
+// Building style for Images inside section about
+
+.composition {
+    position: relative;
+
+    &__photo {
+        width: 55%; // Try do define the width of images in % is possible, this way it will nicely scale with viewport 
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        position: absolute; 
+        z-index: 10; // use z-index to specify one image on top of the overs
+        transition: all .2s; // for animation effect
+        outline-offset: 2rem; // space between the border when hoving on the image
+
+        &--p1 {
+            left: 0;
+            top: -2rem;// move it upwards
+        }
+
+        &--p2 {
+            right: 0;// moving 0px from right side of the container
+            top: 2rem;// 20px from the top
+        }
+
+        &--p3 {
+            left: 20%; // 20% from the left // Used % so it will scale with the viewport
+            top: 10rem;// 10 rem from the top
+        }
+
+        // hover effect // we want zooming when hoovering the img
+        &:hover {
+            outline: .9rem solid $color-primary; // on hoovering the img will outline a green border
+            transform: scale(1.05) translateY(-.5rem); // small difference, but visible for user
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);// gives impresion that is closer up to the user and should increase the shadow
+            z-index: 20; // Higer index, on hoovering will display on top
+        }
+    }
+    // hover state of entire composition
+    //when composition:hover composition__photo:not(:hover)
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95);
+    }
+}
