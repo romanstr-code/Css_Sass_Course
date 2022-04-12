@@ -64,7 +64,7 @@ body {
 
 // Heading style
 .heading-tertiary {
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -72,7 +72,7 @@ body {
 // Paragraph style
 
 .paragraph {
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     // margin bottom not() sudo class
 
     &:not(:last-child) {
