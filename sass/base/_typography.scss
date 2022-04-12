@@ -59,3 +59,23 @@ body {
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
 }
+
+// Section About 
+
+// Heading style
+.heading-tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+// Paragraph style
+
+.paragraph {
+    font-size: 1.6rem;
+    // margin bottom not() sudo class
+
+    &:not(:last-child) {
+        margin-bottom: 3rem; // margin at the bottom between paragraph
+    }
+}
