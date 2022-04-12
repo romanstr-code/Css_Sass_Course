@@ -1,3 +1,6 @@
+// Header 
+// Styled Buttons from header 
+
 .btn {
     &:link,
     &:visited {
@@ -52,5 +55,32 @@
     &--animated {
         animation: moveInBottom;
         animation-fill-mode: backwards;
+    }
+}
+
+// Button Section About 
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block; // Display it as a inline block so we could use box model property ( padding/margin ) 
+        text-decoration: none;// Nullify underlining // We want to put our own decoration
+        border-bottom: 1px solid $color-primary; //  This way we can set padding between the text and the line 
+        padding: 3px;
+        transition: all .2s; // fo being animated 
+    }   
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);// moveing up button
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);// moveing back to initial postion
     }
 }
