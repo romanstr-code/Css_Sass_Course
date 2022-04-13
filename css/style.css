@@ -207,7 +207,7 @@ body {
   font-size: 1.5rem;
   padding: 2.5rem;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 1.5rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transforms .3s; }
   .feature-box__icon {
@@ -275,6 +275,7 @@ body {
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.5), rgba(40, 180, 133, 0.5)), url(../img/nat-4.jpg);
   background-size: cover;
-  transform: skewY(-7deg); }
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
   .section-features > * {
-    transform: skewY(-7deg); }
+    transform: skewY(7deg); }

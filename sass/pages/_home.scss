@@ -20,15 +20,16 @@
         rgba($color-primary-dark, 0.5)) , 
     url(../img/nat-4.jpg);
     background-size: cover;
-
     // Sckew entire section
     transform: skewY(-7deg);
+    margin-top: -10rem; // it align the line with section about
+
 
     //direct child selector of section features ( selects )
     // compiled css 
     // .section-features * 
 
     & > * {
-        transform: skewY(-7deg);
+        transform: skewY(7deg);
     }
 }
