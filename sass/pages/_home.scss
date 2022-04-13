@@ -8,3 +8,27 @@
     margin-top: -20vh; // negative margin, in terms for line to move up
     
 }
+
+// Features Section
+
+.section-features {
+    padding: 20rem 0;// make spaceier
+    // Background linear gradient color and background image
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.5), 
+        rgba($color-primary-dark, 0.5)) , 
+    url(../img/nat-4.jpg);
+    background-size: cover;
+
+    // Sckew entire section
+    transform: skewY(-7deg);
+
+    //direct child selector of section features ( selects )
+    // compiled css 
+    // .section-features * 
+
+    & > * {
+        transform: skewY(-7deg);
+    }
+}
