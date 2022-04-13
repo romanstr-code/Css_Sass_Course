@@ -1,0 +1,28 @@
+// Feature Box //
+
+.feature-box {
+    // Feature box to be white and transparent
+    background-color: rgba($color-white, .8); // 80% to be white // opcaity 20%
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    transition: transforms .3s;
+
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        display: inline-block;// for an element to not occupy all available width
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    // Gradient Effect to appear behind the text
+        -webkit-background-clip: text;// Background gets cliped exactly where the text is // As well it gives it visibility where the text is
+    //Text transparent
+        color: transparent;
+    }
+
+    &:hover{
+        transform: translate(-1.5rem) scale(1.03);
+    }
+
+}
