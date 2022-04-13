@@ -22,7 +22,7 @@
     background-size: cover;
     // Sckew entire section
     transform: skewY(-7deg);
-    margin-top: -10rem; // it align the line with section about
+    margin-top: -10rem; // it align the line with section about 
 
 
     //direct child selector of section features ( selects )
@@ -32,4 +32,13 @@
     & > * {
         transform: skewY(7deg);
     }
+}
+
+
+// Section Tours
+
+.section-tours {
+    background-color: $color-grey-light-1; //color cames from _variables.scss file
+    padding: 25rem 0 50rem 0;// 25 rem on top and on the bottom
+    margin-top: -10rem;
 }
