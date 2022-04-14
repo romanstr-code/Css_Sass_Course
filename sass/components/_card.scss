@@ -1,16 +1,16 @@
+// Functionality 
 .card {
     //Perspective 
     perspective: 150rem;
     //for perspective to work on mozl firefox
     -moz-perspective: 150rem;
     position: relative; 
-    height: 50rem; // The height of the card should be 50 as the sides
+    height: 52rem; // The height of the card should be 50 as the sides
 
 
     &__side {
-        color: #fff;
         font-size: 2rem;
-        height: 50rem;
+        height: 52rem;
         transition: all .8s ease;
         // Effect on top one on another
         position: absolute;
@@ -19,6 +19,7 @@
         width: 100%;
         backface-visibility: hidden; // hides back part of an element
         border-radius: 3px;
+        overflow: hidden;// picture to not go outsite the card
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
 
@@ -37,11 +38,96 @@
     }
 
     // When we hover the card we want the __side to transform
+    // front side of card
     &:hover &__side--front {
         transform: rotateY(180deg);
     }
-
+    // Back side of card
     &:hover &__side--back {
         transform: rotateY(0);
+    }
+
+    // Card picture
+    // FRONT SIDE STYLING
+    &__picture {
+        // Setting background-size for all pictures
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;// blending the image with the linear-gradient color
+        // so the clip-path will work on all browsers
+        -webki-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        // Using clip-path for changing the line between image and content on card
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        // first picture
+        &--1{
+            background-image:linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/img/nat-5.jpg);
+        }
+        // second
+        &--2{
+            background-image: url(/img/nat-5.jpg);
+        }
+        //third
+        &--3{
+            background-image: url(/img/nat-5.jpg);
+        }
+
+    }
+
+    // Crad heading
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;// position absolute so the text will set on top of image
+        top: 12rem; // from top 12 rem
+        right: 2rem;// will be 2rem to right
+        width: 75%; // to not occupy entire width
+    }
+    
+    // card heading span content    
+    &__heading-span {
+        padding: 1rem 1.5rem; // creates more space 
+        -webkit-box-decoration-break: clone; // to work on chrome
+        box-decoration-break: clone;
+
+        // first span content 
+        &--1 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-light, .85), 
+            rgba($color-secondary-dark, .85));
+        }
+    }
+
+    // card details
+
+    &__details {
+
+        padding: 3rem;
+
+        // ul 
+        ul {
+            list-style: none;
+            width: 80%;
+            // center into container// center a block element inside of block element
+            margin: 0 auto; // 0 - top/bottom | left/right atumatically calc by browser
+
+
+            // ul list
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                // we choose all elements that are not last child
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+        }
+
     }
 }
