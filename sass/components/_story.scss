@@ -23,15 +23,41 @@
         clip-path: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg); // Space between content and the image (circle)
+        position: relative;// for figcatpion to work position should be relative
     }
 
     &__img {
         height: 100%; // 100% because img is inside of parent Shape, shape has height defined and if we give 100% to img it takes 100% of the parent
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
     }
 
     &__text {
         transform: skewX(12deg);
 
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%); // blurs on hovering 
     }
 }
 
