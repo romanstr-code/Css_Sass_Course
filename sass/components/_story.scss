@@ -1,0 +1,40 @@
+// Story section
+
+.story {
+    width: 75%;
+    margin: 0;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: $color-white;
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+
+    // Shape
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%); // To work on Safari
+        shape-outside: circle(50% at 50% 50%);// defines where content flows around the element
+
+        clip-path: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg); // Space between content and the image (circle)
+    }
+
+    &__img {
+        height: 100%; // 100% because img is inside of parent Shape, shape has height defined and if we give 100% to img it takes 100% of the parent
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+    }
+}
+
+
+
+
