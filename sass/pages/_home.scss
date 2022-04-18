@@ -74,4 +74,9 @@
 
 
     height: 50rem;
+
+    &__form {
+        width: 50%;// It takes 50% of the entire box
+        padding: 6rem;
+    }
 }
