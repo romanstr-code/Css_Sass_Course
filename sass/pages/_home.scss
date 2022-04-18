@@ -50,3 +50,28 @@
     padding: 15rem 0;
     position: relative;
 }
+
+// Section Form
+
+// Section book
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+// Book 
+
+.book {
+    background-image: linear-gradient(105deg, 
+                                    rgba($color-white, .9) 0%, /* At 0% we want color to be white */
+                                    rgba($color-white, .9) 50%,/*At 50% we want color to be white as well */
+                                    transparent 50%) ,/* An at 50% we want Transparent */
+                            url(/img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+
+
+    height: 50rem;
+}
