@@ -18,6 +18,7 @@
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
+        transition: all .3s;
 
 
         // The browser not give outline by default
@@ -56,5 +57,59 @@
          opacity: 0;// with opacity 0 and visibility hidden it will display just
          visibility: hidden;// after you start wrinting inside input
         transform: translateY(-4rem);// it will decent und appear under the input when writing
+     }
+
+     // Radio Buttons Form
+     &__radio-group {
+        width: 49%; // radio buttons sticks side by side
+        display: inline-block;// blocks inline the element
+     }
+     
+     //radio input / hide radio element 
+     &__radio-input {
+        display: none;
+     }
+
+     // radio label
+     &__radio-label {
+         font-size: $default-font-size;
+         cursor: pointer;
+         position: relative;
+         padding-left: 4.5rem;
+     }
+
+     //radio button
+     &__radio-button {
+        height: 1.9rem;
+        width: 1.9rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+        
+
+        // Green radio dots 
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0; // Hides the green dots inside the circle
+            transition: opacity .2s;
+        }
+     }
+     // As soon as we hit the label element,radio input becomes checked (&__radio-input:checked)
+     // ~ - Selects sibling (&__radio-label) and then select the child ( &__radio-button::after)
+     // because that's the one we want to change each time when radio input is selected 
+     &__radio-input:checked ~  &__radio-label &__radio-button::after {
+        opacity: 1;
      }
 }
