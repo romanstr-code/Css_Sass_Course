@@ -2,6 +2,7 @@
 // Styled Buttons from header 
 
 .btn {
+    &, // just button
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -12,6 +13,10 @@
         transition: all .2s;
         position: relative;
         font-size: 1.6rem;
+
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -25,7 +30,9 @@
 
     }
 
-    &:active {
+    &:active,
+    &:focus{
+        outline: none;
         transform: translate(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2) ;
     }
@@ -92,6 +99,10 @@
         transform: translateY(0);// moveing back to initial postion
     }
 }
+
+
+
+
 
 
 
