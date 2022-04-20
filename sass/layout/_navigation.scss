@@ -16,7 +16,8 @@
         border-radius: 50%;
         z-index: 2000;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
-
+        text-align: center;
+        cursor: pointer;
     }
     // ba
     &__background {
@@ -102,5 +103,57 @@
         // shows the nav
         opacity: 1;
         width: 100%;
+    }
+
+
+    // Navigation Icon
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before {top: -.8rem; }
+        &::after {top: .8rem;}
+    }
+    // moves the lines up when cursor ponts on them 
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    // rotates, one span disappears form a cros
+    &__checkbox:checked + &__button &__icon {
+        // change background color transparent
+        background-color: transparent;
+    }
+    // when checkbox is checked, it takes button and then icon
+    // it rotates it 135 deg. top 0 so it would form a x
+    &__checkbox:checked + &__button &__icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    
+    &__checkbox:checked + &__button &__icon::after{
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
