@@ -6,6 +6,10 @@
     left: 0;
     background-color: rgba($color-black, .8);
     z-index: 9999;
+    // hides the popup
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;// animates the popup
 
     &__content{
         @include absCenter;
@@ -16,6 +20,9 @@
         border-radius: 3px;
         display: table;
         overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .5s .2s;
     }
 
     &__left {
@@ -50,12 +57,47 @@
         column-count: 2; // creates 2 columns
         column-gap: 4rem; // specify the space between the columns
         column-rule: 1px solid $color-grey-light-2;
-        
+
         /*
+
         -moz-hyphens: auto;
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         */
         hyphens: auto; // automatically places the hyphens
     }
+
+    // takes the target 
+    &:target {
+        // makes popup visible
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // popup becomes the target then we style the child element of the popup (__content)
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+     // removes target from popup
+    // it takes it to initial closed state
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+  }
 }
