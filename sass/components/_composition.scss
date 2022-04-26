@@ -12,19 +12,43 @@
         transition: all .2s; // for animation effect
         outline-offset: 2rem; // space between the border when hoving on the image
 
+        @include respond(tab-port) {
+            float: left;
+            position: relative;
+            width: 33.33333333%;
+            box-shadow: 0 1.5rem 3rem rgba($color-black, .2);
+        }
+
         &--p1 {
             left: 0;
             top: -2rem;// move it upwards
+
+            @include respond(tab-port) {
+                top: 0;
+                transform: scale(1.2);
+            }
         }
 
         &--p2 {
             right: 0;// moving 0px from right side of the container
             top: 2rem;// 20px from the top
+
+            @include respond(tab-port) {
+                top: -1rem;
+                transform: scale(1.3);
+                z-index: 100;
+            }
         }
 
         &--p3 {
             left: 20%; // 20% from the left // Used % so it will scale with the viewport
             top: 10rem;// 10 rem from the top
+
+            @include respond(tab-port) {
+                top: 1rem;
+                left: 0;
+                transform: scale(1.1);
+            }
         }
 
         // hover effect // we want zooming when hoovering the img
@@ -41,3 +65,5 @@
         transform: scale(.95);
     }
 }
+
+

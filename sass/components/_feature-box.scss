@@ -10,6 +10,12 @@
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     transition: transforms .3s;
 
+    // media q tablet
+    @include respond(tab-port) {
+        padding: 2rem;
+
+    }
+
     &__icon {
         font-size: 6rem;
         margin-bottom: .5rem;
@@ -19,6 +25,12 @@
         -webkit-background-clip: text;// Background gets cliped exactly where the text is // As well it gives it visibility where the text is
     //Text transparent
         color: transparent;
+
+        // media q tablet
+        @include respond(tab-port) {
+            margin: 0;
+        
+        }
     }
 
     &:hover{
@@ -26,3 +38,6 @@
     }
 
 }
+
+
+
