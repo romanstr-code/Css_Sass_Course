@@ -6,6 +6,16 @@
     // not selects everything except last child
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
+
+        // removes the gutter vertical on tablet with gutter vertical small
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     //include @clearfix from mixins
@@ -19,6 +29,18 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            // removes the margin on tablets
+            @include respond(tab-port) {
+               margin-right: 0;
+               margin-bottom: $gutter-vertical-small;
+            }
+
+        }
+
+        // media q // all columns width 100%
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
     
@@ -54,3 +76,6 @@
         width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
     }
 }
+
+
+
