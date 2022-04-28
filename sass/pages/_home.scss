@@ -99,11 +99,40 @@
 
 
 
-    height: 50rem;
+    // Media Q tab landscape
+    @include respond (tab-land) {
+        background-image: linear-gradient(105deg,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 65%,
+            transparent 65%),
+        url(/img/nat-10.jpg);
+        background-size: cover;
+
+    }
+
+    // MEDIA Q 900
+    @include respond(tab-port) {
+        background-image: linear-gradient(to right,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 100%),
+        url(/img/nat-10.jpg);
+    }
 
     &__form {
         width: 50%;// It takes 50% of the entire box
         padding: 6rem;
+
+        // media q
+
+        @include respond(tab-land) {
+            width: 65%;
+        }
+
+        // media q tab port
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
     }
 }
 

@@ -20,6 +20,11 @@
         display: block;
         transition: all .3s;
 
+        // media q
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
 
         // The browser not give outline by default
         &:focus {
@@ -63,6 +68,12 @@
      &__radio-group {
         width: 49%; // radio buttons sticks side by side
         display: inline-block;// blocks inline the element
+
+        // media q
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
      }
      
      //radio input / hide radio element 
@@ -113,3 +124,6 @@
         opacity: 1;
      }
 }
+
+
+
