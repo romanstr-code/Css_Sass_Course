@@ -4,13 +4,24 @@
         to right bottom, 
         rgba($color-primary-light, 0.5), 
         rgba($color-primary-dark, 0.5)) , 
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
-    
     -webki-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    // large version on hero image is shown when resolution will be higher than 192dpi the media q 
+    // and whenether the width is larger than 600px, if it is bellow 600px it does not make sense to
+    // display such high resolution image
+    // Is the width larger than 2000 ? if it is , than apply this hero image
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+           (min-width: 125em) {
+        background-image: linear-gradient(to right bottom,
+                rgba($color-primary-light, 0.5),
+                rgba($color-primary-dark, 0.5)),
+            url(../img/hero.jpg);
+    }
 
     // clip-path line change// media q for mobile 
     @include respond(phone) {
@@ -37,3 +48,5 @@
         text-align: center; 
     }
 }
+
+
