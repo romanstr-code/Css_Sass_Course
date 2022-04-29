@@ -11,6 +11,14 @@
     visibility: hidden;
     transition: all .3s;// animates the popup
 
+    // browser chose what is support and applies the code 
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
+
     &__content{
         @include absCenter;
 
@@ -99,5 +107,9 @@
         &:hover {
             color: $color-primary;
         }
-  }
+    }
 }
+
+
+
+
