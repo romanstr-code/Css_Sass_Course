@@ -363,7 +363,21 @@
        <!--Footer Section-->
             <footer class="footer">
                 <div class="footer__logo-box">
-                    <img src="/img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+                    <!--
+                        If lower resolution screen use logo-green-small image, if high resolution screen use logo-green-small-2x
+                        We use media query to force browser to use source/sorceset, the images when max-width is less than 600px
+                        If broswer is larger than 600 px, broswer will chose img srcset images
+                        
+                        Art direction, different images for different view port width
+                        Inside srcset we give density switching, give browser a choice to use either high resolution
+                        image or lower resolution image according to screen which the web page viewed on.
+                    -->
+                    <picture class="footer__logo">
+                        <source srcset="/img/logo-green-small-1x.png 1x, /img/logo-green-small-2x.png 2x" 
+                                media="(max-width: 37.5em)">
+                        <img srcset="/img/logo-green-1x.png 1x, /img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
+                    </picture>
+
                 </div>
                 <div class="row">
                     <div class="col-1-of-2">
