@@ -30,13 +30,18 @@
         width: 15rem;
         height: 15rem;
         float: left;
-        -webkit-shape-outside: circle(50% at 50% 50%); // To work on Safari
-        shape-outside: circle(50% at 50% 50%);// defines where content flows around the element
-
-        clip-path: circle(50% at 50% 50%);
-        -webkit-clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg); // Space between content and the image (circle)
         position: relative;// for figcatpion to work position should be relative
+        overflow: hidden;
+        border-radius: 50%;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            clip-path: circle(50% at 50% 50%);
+            -webkit-clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%); // To work on Safari
+            shape-outside: circle(50% at 50% 50%); // defines where content flows around the element
+            border-radius: none;
+        }
 
         // media q for mobile
         @include respond (phone) {
