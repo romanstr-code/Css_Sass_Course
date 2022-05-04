@@ -39,8 +39,11 @@ body {
     }
 }
 
-
-
+// on text selection change color green
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
 
 
 
